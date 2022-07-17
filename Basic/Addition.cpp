@@ -1,3 +1,6 @@
+#include<iostream>
+using namespace std;
+
 void addition(int n,int m,int b){
       int r=0,p=1,c=0;
     while(n>0 ||m>0 || c>0){
@@ -14,4 +17,20 @@ void addition(int n,int m,int b){
     
     }
     cout<<r;
+}
+int main()
+{
+
+    int n,m,b;
+    cin>>n>>m;
+
+
+    cout<<"enter base";
+    cin>>b;
+
+   addition(n,m,10);
+   
+
+
+    return 0;
 }
