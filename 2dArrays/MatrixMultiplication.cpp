@@ -31,7 +31,6 @@ void takeInput(int **a,int n,int m){
         a[i]=new int[m];
     }
 
-     cout<<endl;
     cout<<"enter Elements of array "<<"  ";
 
     for(int i=0;i<n;i++){
@@ -53,7 +52,7 @@ int main()
     cin>>r1;
     cin>>c1;
 
-     cout<<"enter for 2nd arrra "<<" ";
+     cout<<"enter for arrray "<<" ";
     int r2,c2;
     cin>>r2;
     cin>>c2;

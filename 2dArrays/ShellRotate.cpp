@@ -1,26 +1,63 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
-void rotate(int oned[] , int r,int **a){
+void rotate(vector<int> oned, int r,int **a){
+    int size = oned.size();
     r=r%sizeof(a);
     if(r<0){
         r =r+ sizeof(a);
     }
-    cout<<sizeof(oned)-1;
-    // reverse(oned,0,sizeof(oned)-r-1);
-    // reverse(oned,sizeof(oned)-r,sizeof(oned)-1);
+    cout<<size-1;
+    reverse(oned,0,size-r-1);
+    reverse(oned,size-r,size-1);
 
-    // reverse(oned,0,sizeof(a)-1);
+    reverse(oned,0,sizeof(a)-1);
 
 }
 
-// void reverse(int oned,int i ,int j){
-//     while(i<j){
-//         int temp = oned[i];
-//         oned[i]=oned[j];
-//         oned[j]=temp;
-//     }
-// }
+void reverse(vector<int>oned,int i ,int j){
+    while(i<j){
+        int temp = oned[i];
+        oned[i]=oned[j];
+        oned[j]=temp;
+    }
+}
+
+vector<int> fillOnedFromShell(int **a,int s){
+    int minr=0, maxr=sizeof(a)-1;
+    int minc=0,maxc= sizeof(a[0])-1;
+    int sz = 2*(maxr-minr + maxc - minc);
+
+    vector<int>oned;
+    //left wall
+
+    for(int i=minr , j=minc;i<=maxr;i++){
+        oned.push_back(a[i][j]);
+    }
+
+    //bottom wall 
+
+     for(int i=maxr , j=minc+1;i<=maxc;j++){
+        oned.push_back(a[i][j]);
+    }
+
+    //right wall
+
+     for(int i=maxr , j=maxc;i>=minr;i--){
+        oned.push_back(a[i][j]);
+    }
+
+
+    //top wall
+
+     for(int i=minr , j=maxc-1;i>=minc+1;j--){
+        oned.push_back(a[i][j]);
+    }
+
+    return oned;
+
+
+}
 
 void takeInput(int **a,int n,int m){
     for(int i=0;i<n;i++){
@@ -57,10 +94,14 @@ int main()
     
     takeInput(a,r1,c1);
 
-    int oned[1000000];
+    // int oned[1000000];
+    vector<int> b;
 
-    // int oned=fillOnedFromShell(a,s);
-    rotate(oned,r, a);
+    b=fillOnedFromShell(a,s);
+    for(int i = 0; i < b.size(); i++)
+        cout << b[i] << " ";
+  
+    rotate(b,r, a);
     // fillshellFromOned(a,s,oned);
  
     
