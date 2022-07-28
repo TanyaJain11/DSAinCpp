@@ -4,6 +4,7 @@
         "cmath": "cpp",
         "random": "cpp",
         "string_view": "cpp",
-        "regex": "cpp"
+        "regex": "cpp",
+        "new": "cpp"
     }
 }
