@@ -119,5 +119,10 @@ int main()
     deleteNode(2,head);
 
     print(head);
+
+     deleteNode(2,head);
+
+    print(head);
+    print(tail);
     return 0;
 }
