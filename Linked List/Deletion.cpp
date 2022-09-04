@@ -12,19 +12,20 @@ class Node{
         this->next=NULL;
     }
 
-     ~Node(){
-        int value=this->data;
-        //memory free
-        if(this->next !=NULL){
-            delete next;
-            this->next=NULL;
-        }
-        cout<<"memory is free for data "<<value<<endl;
-    }
+    //  ~Node(){
+    //     int value=this->data;
+    //     //memory free
+    //     // if(this->next !=NULL){
+    //     //     cout<<"fee";
+    //     //     delete next;
+    //     //     this->next=NULL;
+    //     // }
+    //     cout<<"memory is free for data "<<value<<endl;
+    // }
 
 };
 
-void deleteNode(int position,Node* &head){
+void deleteNode(int position,Node* &head, Node* &tail){
     if(position==1){
         Node* temp=head;
         head=head->next;
@@ -42,6 +43,13 @@ void deleteNode(int position,Node* &head){
             previous=curr;
             curr=curr->next;
             cnt++;
+        }
+
+        if(curr->next==NULL){
+            previous->next=NULL;
+            tail = previous;
+            delete curr;
+            return;
         }
         previous->next=curr->next;
         curr->next=NULL;
@@ -115,12 +123,15 @@ int main()
     print(head);
 
     print(head);
+     
 
-    deleteNode(2,head);
+    cout<<"calling deletion";
+    deleteNode(3,head,tail);
 
-    print(head);
+    // print(head);
 
-     deleteNode(2,head);
+    cout<<"calling deletion";
+    //  deleteNode(2,head);
 
     print(head);
     print(tail);
