@@ -12,16 +12,16 @@ class Node{
         this->next=NULL;
     }
 
-    //  ~Node(){
-    //     int value=this->data;
-    //     //memory free
-    //     // if(this->next !=NULL){
-    //     //     cout<<"fee";
-    //     //     delete next;
-    //     //     this->next=NULL;
-    //     // }
-    //     cout<<"memory is free for data "<<value<<endl;
-    // }
+     ~Node(){
+        int value=this->data;
+        // memory free
+        if(this->next !=NULL){
+            cout<<"fee";
+            delete next;
+            this->next=NULL;
+        }
+        cout<<"memory is free for data "<<value<<endl;
+    }
 
 };
 

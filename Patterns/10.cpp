@@ -13,9 +13,8 @@ int main()
     int n;
     cin>>n;
 
-    int os=n/2;
-    int is=-1;
-
+    int os=n/2;  // outer space
+    int is=-1;    //inner space
     for(int i=1;i<=n;i++){
         for(int j=1;j<=os;j++){
                 cout<<" ";

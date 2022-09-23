@@ -1,5 +1,6 @@
 #include<iostream>
 using namespace std;
+//pascal triangle
 // nck+1 = (nck . (n-k))/k+1
 /*
 n = 6
