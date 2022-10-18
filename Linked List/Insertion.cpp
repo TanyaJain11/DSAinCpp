@@ -89,6 +89,8 @@ int main()
     insertAtPosition(tail,head,3,221);
     print(head);
 
+    insertAtHead(head,222222);
+
     insertAtPosition(tail,head,4,220);
     print(head);
 

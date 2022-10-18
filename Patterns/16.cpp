@@ -14,7 +14,7 @@ int main()
 {
     int n;
     cin>>n;
-    int sp=2*n-3;
+    int sp=2*n-3;   //2n-1-2
     int st =1;
     
     for(int i=1;i<=n;i++){
