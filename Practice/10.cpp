@@ -16,7 +16,7 @@ int main(){
     cin>>n;
 
     for(int i=n-1;i>2;i--){
-        if(checkPrime(i) && checkPrime(n-2)){
+        if(checkPrime(i) && checkPrime(i-2)){
             cout<<i<<" "<<i-2;
             return 0;
         }
